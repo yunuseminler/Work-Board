@@ -1,30 +1,36 @@
 "use client";
 
-import { FormInput } from "./settings/form-input";
-import { FormButton } from "./form-button";
+import { FormSubmit } from "@/components/form/form-submit";
 import { useAction } from "@/hooks/use-action";
 import { createBoard } from "@/actions/create-board";
+import { FormInput } from "@/components/form/form-input";
 
 export const Form = () =>{
     const {execute,fieldErrors} = useAction(createBoard,{
         onSuccess: (data) =>{
             console.log(data,"SUCCESS!")
         },
-        onerror: (error) =>{
+        onError: (error) =>{
             console.error(error);
         }
     });
     const onSubmit =(formData: FormData)=>{ 
         const title = formData.get("title") as string;
+        console.log(title);
         execute({title});
     }
     return(
         <form action={onSubmit}>
             <div className="flex flex-col space-y-2">
-                <FormInput errors={fieldErrors}/>
+                <FormInput 
+                label="Board Title"
+                id="title"
+                errors={fieldErrors}/>
             </div>
 
-        <FormButton/>
+        <FormSubmit>
+            Save
+        </FormSubmit>
 
         </form>
     )

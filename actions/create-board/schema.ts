@@ -7,4 +7,4 @@ export const CreateBoard = z.object({
     }).min(3,{
         message: "Title is too short."
     }),
-})
+});
