@@ -6,7 +6,7 @@ const DashBoardLayout =({
     children: React.ReactNode;
 })=>{
     return(
-        <div>
+        <div className="h-full">
             <Navbar/>
             {children}
         </div>
