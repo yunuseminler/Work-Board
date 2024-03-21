@@ -75,7 +75,7 @@ export const Actions = ({
         onClick={onCopy}
         disabled={isLoadingCopy}
         variant="gray"
-        className="w-full justify-start"
+        className="w-full justify-start text-blue-500"
         size="inline"
       >
         <Copy className="h-4 w-4 mr-2" />
@@ -85,7 +85,7 @@ export const Actions = ({
         onClick={onDelete}
         disabled={isLoadingDelete}
         variant="gray"
-        className="w-full justify-start"
+        className="w-full justify-start text-red-500"
         size="inline"
       >
         <Trash className="h-4 w-4 mr-2" />
