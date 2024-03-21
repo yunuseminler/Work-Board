@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { db } from "./db";
 
 export type FieldErrors<T> = {
   [K in keyof T]?: string[];

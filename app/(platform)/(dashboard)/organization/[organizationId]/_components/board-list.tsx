@@ -47,9 +47,7 @@ export const BoardList = async () =>{
                 <p className="text-xm">
                     Crate New Board
                 </p>
-                <span className="text-xs">
-                    5 remaining
-                </span>
+                
                 <Hint
                 sideOffset={40}
                 description={`Free Workspaces can have up to 5 open boards. For Unlimited boards upgrade this worspace.`}
