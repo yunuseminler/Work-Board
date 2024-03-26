@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { FormPicker } from "./form-picker";
 import { ElementRef, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { FormSpinner } from "./form-spinner";
 
 interface FormPopoverProps{
     children: React.ReactNode;
@@ -33,9 +34,9 @@ export const FormPopover = ({children,side="bottom",align,sideOffset=0}:FormPopo
             toast.error(error);
         }
     })
-    const onSubmit = (formdata: FormData) =>{
-        const title = formdata.get("title") as string;
-        const image = formdata.get("image") as string;
+    const onSubmit = (formData: FormData) =>{
+        const title = formData.get("title") as string;
+        const image = formData.get("image") as string;
         execute({title,image});
     }
     return(
@@ -63,6 +64,8 @@ export const FormPopover = ({children,side="bottom",align,sideOffset=0}:FormPopo
                     <FormSubmit className="w-full">
                         Create
                     </FormSubmit>
+                    <FormSpinner/>
+
                 </form>
             </PopoverContent>
         </Popover>

@@ -4,6 +4,8 @@ import { useFormStatus } from "react-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import { FormSpinner } from "./form-spinner";
 
 interface FormSubmitProps {
     children: React.ReactNode;
@@ -20,8 +22,13 @@ export const FormSubmit = ({
 }: FormSubmitProps) => {
     const {pending} = useFormStatus();
     return(
-        <Button disabled={pending || disabled} type="submit" variant={variant} size="sm" className={cn(className)}>
-            {children}
-        </Button>
+        <div className="flex gap-2">
+            <Button disabled={pending || disabled} type="submit" variant={variant} size="sm" className={cn(className)}>
+                {children}
+            </Button>
+            <FormSpinner/>
+
+        </div>
+        
     );
 };

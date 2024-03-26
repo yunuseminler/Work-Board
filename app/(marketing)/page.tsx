@@ -18,7 +18,7 @@ const MarketingPage = () =>{
                 No 1 task management
                 </div>
                 <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
-                    Taskify helps team move
+                    Boardy helps team move
                 </h1>
                 <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
                     work forward
@@ -29,7 +29,7 @@ const MarketingPage = () =>{
             </div>
             <Button className="mt-6" size="lg" asChild>
                 <Link href="/sign-up">
-                    Get Taskify for free
+                    Start Using Boardy
                 </Link>
             </Button>
         </div>

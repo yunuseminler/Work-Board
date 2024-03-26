@@ -18,6 +18,7 @@ import { copyList } from "@/actions/copy-list";
 import { deleteList } from "@/actions/delete-list";
 import { FormSubmit } from "@/components/form/form-submit";
 import { Seperator } from "@/components/ui/separator";
+import { FormSpinner } from "@/components/form/form-spinner";
 
 interface ListOptionsProps {
   data: List;
@@ -95,7 +96,9 @@ export const ListOptions = ({
             className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm text-blue-500"
           >
             Copy list...
+
           </FormSubmit>
+
         </form>
         <Seperator />
         <form
@@ -107,8 +110,10 @@ export const ListOptions = ({
             variant="ghost"
             className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm text-red-500"
           >
-            Delete this list
+            Delete this list 
+
           </FormSubmit>
+
         </form>
       </PopoverContent>
     </Popover>

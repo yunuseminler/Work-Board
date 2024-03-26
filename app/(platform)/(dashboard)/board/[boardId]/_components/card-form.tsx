@@ -16,6 +16,9 @@ import { createCard } from "@/actions/create-card";
 import { Button } from "@/components/ui/button";
 import { FormSubmit } from "@/components/form/form-submit";
 import { FormTextarea } from "@/components/form/form-textarea";
+import { useFormStatus } from "react-dom";
+import ClipLoader from "react-spinners/ClipLoader";
+import { FormSpinner } from "@/components/form/form-spinner";
 
 interface CardFormProps {
   listId: string;
@@ -32,6 +35,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(({
 }, ref) => {
   const params = useParams();
   const formRef = useRef<ElementRef<"form">>(null);
+  const {pending} = useFormStatus();
 
   const { execute, fieldErrors } = useAction(createCard, {
     onSuccess: (data) => {
